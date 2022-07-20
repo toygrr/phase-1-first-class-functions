@@ -1,19 +1,13 @@
-// function exerciseRoutine(postRunActivity) {
-//     runFiveMiles();
-//     postRunActivity();
-//   }
-
-function receivesAFunction(callBack){
-    callBack()   
+function receivesAFunction(spy) {
+  return spy();
 }
 
-function returnsANamedFunction(){
-    return function something(){
-        console.log("what am I doing");
-    }
+receivesAFunction(spy());
+
+function returnsANamedFunction() {
+  return function doesSomething() {};
 }
 
-function returnsAnAnonymousFunction(){
-    return function(){
-    }
+function returnsAnAnonymousFunction() {
+  return function () {};
 }
